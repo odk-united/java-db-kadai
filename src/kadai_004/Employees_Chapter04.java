@@ -39,6 +39,13 @@ public class Employees_Chapter04 {
 		} catch(SQLException e) {
             System.out.println("データベース接続失敗：" + e.getMessage());
 		}
+		 finally {
+			if( statement != null ) {
+                try { statement.close(); } catch(SQLException ignore) {}
+            }
+            if( con != null ) {
+                try { con.close(); } catch(SQLException ignore) {}
+            }
 	}
 
 }
